@@ -1656,7 +1656,7 @@
                         </div>
                         <br>
                         <form id="subscribe-form"
-                            action="https://owilly.pythonanywhere.com/api/blog/subscriptions/create/" method="POST"
+                            action="https://testmanagement.pythonanywhere.com/api/blog/subscriptions/create/" method="POST"
                             style="display: flex; flex-direction: column; max-width: 400px;">
                             <input type="email" name="email" placeholder="Enter your email" required
                                 style="padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; outline: none; background-color: #301934; color: #ffffff;">
@@ -1672,7 +1672,7 @@
                             style="margin-top: 20px; color: #ffffff; padding: 10px; border-radius: 5px; display: none;">
                         </div>
                         <br>
-                        <form id="contact-form" action="https://owilly.pythonanywhere.com/api/blog/contact-us/create/"
+                        <form id="contact-form" action="https://testmanagement.pythonanywhere.com/api/blog/contact-us/create/"
                             method="POST" style="display: flex; flex-direction: column; max-width: 400px;">
                             <input type="text" name="name" placeholder="Your Name" required
                                 style="padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; outline: none;background-color: #301934;color: #ffffff;">
@@ -1873,7 +1873,7 @@
                 const blogContainer = document.getElementById('blog-container');
 
                 // Fetch blog posts from the API
-                fetch('https://owilly.pythonanywhere.com/api/blog/blogposts/')
+                fetch('https://testmanagement.pythonanywhere.com/api/blog/blogposts/')
                     .then(response => response.json())
                     .then(data => {
                         data.forEach(post => {
@@ -1942,7 +1942,7 @@
                 let currentIndex = 0;
 
                 function fetchTestimonials() {
-                    fetch('https://owilly.pythonanywhere.com/api/blog/testimonials/')
+                    fetch('https://testmanagement.pythonanywhere.com/api/blog/testimonials/')
                         .then(response => {
                             if (!response.ok) {
                                 throw new Error('Network response was not ok');

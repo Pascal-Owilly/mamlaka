@@ -544,7 +544,7 @@
                         <h4 style="color: #150c1a; margin-bottom: 20px;">Subscribe to Our Newsletter</h4>
                         <div class="card p-3" id="subscribe-message" style="margin-top: 20px; color: #ffffff; padding: 10px; border-radius: 5px; display: none;"></div>
                         <br>
-                        <form id="subscribe-form" action="https://owilly.pythonanywhere.com/api/blog/subscriptions/create/" method="POST" style="display: flex; flex-direction: column; max-width: 400px;">
+                        <form id="subscribe-form" action="https://testmanagement.pythonanywhere.com//api/blog/subscriptions/create/" method="POST" style="display: flex; flex-direction: column; max-width: 400px;">
                             <input type="email" name="email" placeholder="Enter your email" required style="padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; outline: none; background-color: #301934; color: #ffffff;">
                             <button type="submit" style="padding: 10px; background-color: #301934; color: #ffffff; border: none; border-radius: 5px; cursor: pointer;">Subscribe</button>
                         </form>
@@ -555,7 +555,7 @@
                         <h4 style="color: #150c1a; margin-bottom: 20px;">Contact Us</h4>
                         <div id="contact-message" class="card p-3" style="margin-top: 20px; color: #ffffff; padding: 10px; border-radius: 5px; display: none;"></div>
                         <br>
-                        <form id="contact-form" action="https://owilly.pythonanywhere.com/api/blog/contact-us/create/" method="POST" style="display: flex; flex-direction: column; max-width: 400px;">
+                        <form id="contact-form" action="https://testmanagement.pythonanywhere.com/api/blog/contact-us/create/" method="POST" style="display: flex; flex-direction: column; max-width: 400px;">
                             <input type="text" name="name" placeholder="Your Name" required style="padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; outline: none;background-color: #301934;color: #ffffff;">
                             <input type="email" name="email" placeholder="Your Email" required style="padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; outline: 2px solid #301934;background-color: #301934;color: #ffffff;">
                             <textarea name="message" placeholder="Your Message" rows="4" required style="padding: 10px; margin-bottom: 10px; border: none; border-radius: 5px; outline: none;background-color: #301934;color: #ffffff;"></textarea>
@@ -737,7 +737,7 @@
     let blogPosts = []; // Array to hold all blog posts
 
     function fetchBlogPosts() {
-        fetch('https://owilly.pythonanywhere.com/api/blog/blogposts/')
+        fetch('https://testmanagement.pythonanywhere.com/api/blog/blogposts/')
             .then(response => response.json())
             .then(data => {
                 blogPosts = data; // Store all blog posts
