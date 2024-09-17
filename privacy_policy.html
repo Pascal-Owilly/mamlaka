@@ -12,13 +12,13 @@
     <!-- BOOTSTRAP -->
 
     <!-- Bootstrap CSS -->
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- jQuery and Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<!-- end bootstrap -->
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- end bootstrap -->
 
     <!-- Place favicon.ico in the root directory -->
     <!-- all css here -->
@@ -39,220 +39,267 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="css/video-js.css" rel="stylesheet">
 
-    
+
     <!-- style css -->
     <link rel="stylesheet" href="style.css">
     <style>
+        .icon-wrapper {
+            display: inline-block;
+        }
 
-.icon-wrapper {
-    display: inline-block;
-}
+        .hover-icon {
+            fill: #e1e1e1;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #e1e1e1;
+            padding: 8px;
+            background-color: transparent;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
 
-.hover-icon {
-    fill: #e1e1e1;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid #e1e1e1;
-    padding: 8px;
-    background-color: transparent;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.hover-icon:hover {
-    background-color: #150c1a;
-    cursor: pointer;
-    transform: rotate(15deg);
-}
+        .hover-icon:hover {
+            background-color: #150c1a;
+            cursor: pointer;
+            transform: rotate(15deg);
+        }
 
 
-#partner-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    overflow: hidden;
-    max-height: 200px; /* Adjust based on your layout */
-    transition: max-height 0.3s ease;
-}
+        #partner-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            overflow: hidden;
+            max-height: 200px;
+            /* Adjust based on your layout */
+            transition: max-height 0.3s ease;
+        }
 
-#partner-list.expanded {
-    max-height: none;
-}
+        #partner-list.expanded {
+            max-height: none;
+        }
 
-.show-more {
-    background: transparent;
-    border: none;
-    color: #007bff; /* Adjust based on your design */
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-}
+        .show-more {
+            background: transparent;
+            border: none;
+            color: #007bff;
+            /* Adjust based on your design */
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
 
-.show-more i {
-    margin-left: 5px;
-    transition: transform 0.3s ease;
-}
+        .show-more i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
 
-.show-more.rotate i {
-    transform: rotate(180deg);
-}
-
+        .show-more.rotate i {
+            transform: rotate(180deg);
+        }
     </style>
     <style>
         .network-area {
-    text-align: center;
-    padding-top: 100px;
-    padding-bottom: 50px;
-}
-
-.network-details {
-    position: relative;
-    padding: 50px 0;
-}
-
-.network-heading h1 {
-    font-size: 48px;
-    font-weight: bold;
-}
-
-.network-flow {
-    position: relative;
-    margin-top: 30px;
-}
-
-.flow-steps {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: relative;
-}
-
-.flow-steps .step {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-}
-
-.flow-steps .step-content {
-    width: 45%;
-    text-align: left;
-    background-color: #301934; /* Semi-transparent background */
-    padding: 15px;
-    border-radius: 5px;
-    color: white;
-}
-
-.flow-steps .step.left-step .step-content {
-    margin-left: auto;
-}
-
-.flow-steps .step.right-step .step-content {
-    margin-right: auto;
-}
-
-.flow-steps:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, transparent, #fff 50%, transparent) repeat-y;
-    background-size: 0 20px;
-    z-index: 1;
-}
-
-.flow-steps .step:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 15px;
-    height: 15px;
-    background-color: white;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-}
-
-.app-download-buttons {
-    margin-top: 40px;
-    text-align: center;
-}
-
-.app-button img {
-    width: 150px;
-    margin: 0 10px;
-}
-
-.explore-button {
-    display: block;
-    margin: 30px auto 0;
-    padding: 10px 20px;
-    background-color: #00aaff;
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.explore-button:hover {
-    background-color: #0088cc;
-}
-
-    .read-more {
-        display: inline-block;
-        cursor: pointer;
-        padding: 5px;
-        color: #150c1a;
-        font-size: 18px;
-        font-weight: bold;
-        text-align: center;
-        border: none;
-        background: none;
-    }
-
-    .read-more i {
-        display: block;
-        transition: transform 1s ease;
-        color: grey;
-        font-size:14px;
-        color:grey;
-        font-weight:500 !important;
-    }
-
-    .read-more:hover i {
-        transform: translateY(5px); /* Downward movement on hover */
-    }
-
-    .read-more i.fa-arrow-down {
-        animation: bounce 5s infinite; /* Bounce animation */
-    }
-
-    @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% {
-            transform: translateY(0);
+            text-align: center;
+            padding-top: 100px;
+            padding-bottom: 50px;
         }
-        40% {
-            transform: translateY(-10px);
+
+        .network-details {
+            position: relative;
+            padding: 50px 0;
         }
-        60% {
-            transform: translateY(-5px);
+
+        .network-heading h1 {
+            font-size: 48px;
+            font-weight: bold;
         }
-    }
+
+        .network-flow {
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .flow-steps {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+
+        .flow-steps .step {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .flow-steps .step-content {
+            width: 45%;
+            text-align: left;
+            background-color: #301934;
+            /* Semi-transparent background */
+            padding: 15px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .flow-steps .step.left-step .step-content {
+            margin-left: auto;
+        }
+
+        .flow-steps .step.right-step .step-content {
+            margin-right: auto;
+        }
+
+        .flow-steps:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #fff 50%, transparent) repeat-y;
+            background-size: 0 20px;
+            z-index: 1;
+        }
+
+        .flow-steps .step:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 15px;
+            height: 15px;
+            background-color: white;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .app-download-buttons {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .app-button img {
+            width: 150px;
+            margin: 0 10px;
+        }
+
+        .explore-button {
+            display: block;
+            margin: 30px auto 0;
+            padding: 10px 20px;
+            background-color: #00aaff;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .explore-button:hover {
+            background-color: #0088cc;
+        }
+
+        /* carousel */
+
+        .carousel-container {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            background-color: #301934;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .card {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            background-color: #301934;
+            color: #ffffff;
+            border-radius: 10px;
+        }
+
+        .card-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card-body {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-controls span {
+            background-color: grey;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* cards */
+
+        .card {
+            color: white;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .card-header {
+            border-bottom: none;
+        }
 
 
+        .icon-wrapper i {
+            color: white;
+        }
 
+        .card-header h3 {
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        .card-body p {
+            margin: 0;
+        }
     </style>
 
-<!-- HEADER STYLE -->
+    <!-- HEADER STYLE -->
     <style>
-
-/* Navbar styles */
-/* .gc_main_menu_wrapper {
+        /* Navbar styles */
+        /* .gc_main_menu_wrapper {
   background-color: rgb(249, 250, 251);
   border-bottom: 1px solid #ddd;
 }
@@ -283,64 +330,65 @@
   color: #0056b3;
 } */
 
-/* Dropdown menu */
-.navbar-toggler {
-    z-index: 1050;
-  }
+        /* Dropdown menu */
+        . .navbar-toggler {
+            z-index: 1050;
+        }
 
-  .mobile-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 1040;
-    display: none;
-  }
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1040;
+            display: none;
+        }
 
-  .navbar-collapse.show + .mobile-overlay {
-    display: block;
-  }
+        .navbar-collapse.show+.mobile-overlay {
+            display: block;
+        }
 
-  .navbar-collapse.show {
-    justify-content: flex-end !important; /* Align items to the right */
-  }
+        .navbar-collapse.show {
+            justify-content: flex-end !important;
+            /* Align items to the right */
+        }
 
-  .navbar-toggler:focus, .navbar-toggler:active {
-    outline: none;
-    box-shadow: none;
-  }
+        .navbar-toggler:focus,
+        .navbar-toggler:active {
+            outline: none;
+            box-shadow: none;
+        }
 
-  .btn-custom {
-    background-image: linear-gradient(316deg, #310e68 0%, #5f0f40 74%);
-    border-radius: 30px;
-    padding: 0.5rem 1rem;
-  }
+        .btn-custom {
+            background-image: linear-gradient(316deg, #310e68 0%, #5f0f40 74%);
+            border-radius: 30px;
+            padding: 0.5rem 1rem;
+        }
 
-  .btn-custom:hover {
-    background-image: linear-gradient(316deg, #5f0f40 0%, #310e68 74%);
-  }
+        .btn-custom:hover {
+            background-image: linear-gradient(316deg, #5f0f40 0%, #310e68 74%);
+        }
 
-  .navbar-nav .nav-item .nav-link {
-    font-weight: 600;
-    margin-left: 20px;
-    transition: color 0.3s ease;
-  }
+        .navbar-nav .nav-item .nav-link {
+            font-weight: 600;
+            margin-left: 20px;
+            transition: color 0.3s ease;
+        }
 
-  .navbar-nav .nav-item .nav-link:hover {
-    color: #5f0f40;
-  }
+        .navbar-nav .nav-item .nav-link:hover {
+            color: #5f0f40;
+        }
 
-  .container-fluid.px-4 {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-  }
+        .container-fluid.px-4 {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
 
-  .collapse.navbar-collapse {
-    padding-right: 0 !important;
-  }
-
+        .collapse.navbar-collapse {
+            padding-right: 0 !important;
+        }
     </style>
     <!-- END HEADER STYLE -->
     <!-- responsive css -->
