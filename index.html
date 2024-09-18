@@ -104,7 +104,7 @@
     <style>
         .section-with-bg {
             position: relative;
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('images/bg/mhs-2.jpg');
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('images/hero/hero2.jpeg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -413,6 +413,7 @@
             font-weight: 600;
             margin-left: 20px;
             transition: color 0.3s ease;
+            color: #000;
         }
 
         .navbar-nav .nav-item .nav-link:hover {
@@ -427,6 +428,30 @@
         .collapse.navbar-collapse {
             padding-right: 0 !important;
         }
+
+        @keyframes backgroundMove {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+#carousel-example-generic {
+  animation: backgroundMove 15s linear infinite;
+}
+
+#particles-js {
+  position: relative;
+  height: 100vh;
+  overflow: hidden; /* Ensure nothing escapes the div boundaries */
+}
+
+.carousel-inner {
+  position: relative;
+  z-index: 1; /* Make sure the content is on top of the background */
+}
     </style>
     <!-- END HEADER STYLE -->
     <!-- responsive css -->
@@ -446,6 +471,9 @@
 
     <!-- Header area start here -->
     <style>
+        body{
+            background-color: black !important;
+        }
         .navbar-toggler {
             z-index: 1050;
         }
@@ -739,6 +767,89 @@
                 /* Make container full width on very small screens */
             }
         }
+        .background {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url('images/bg/mhs-2.jpg');
+    background-size: cover;
+    background-position: left;
+    transform: scaleX(-1); /* Mirror the background horizontally */
+    z-index: -1; /* Place the background behind the content */
+}
+
+.radial-gradient {
+
+background-repeat:no-repeat;
+
+background-size: 100% 100%;
+background-image: radial-gradient(farthest-corner at 40px 40px,
+  #111 20%, #333 100%,#ddd 100%);
+}
+.text-glow{
+color: white;
+text-shadow: 0 1px 0 #ccc,
+           0 2px 0 #c9c9c9,
+           0 3px 0 #bbb,
+           0 4px 0 #b9b9b9,
+           0 5px 0 #aaa,
+           0 6px 1px rgba(0,0,0,.1),
+           0 0 5px rgba(0,0,0,.1),
+           0 1px 3px rgba(0,0,0,.3),
+           0 3px 5px rgba(0,0,0,.2),
+           0 5px 10px rgba(0,0,0,.25),
+           0 10px 10px rgba(0,0,0,.2),
+           0 20px 20px rgba(0,0,0,.15);
+}
+.t2{
+
+color: white;
+text-shadow: 0 0 2px #fff, 0 0 3px #ff4da6, 0 0 4px #ff4da6, 0 0 5px #ff4da6, 0 0 6px #ff4da6, 0 0 7px #ff4da6, 0 0 8px #ff4da6;
+}
+
+.shiny-black-bg {
+    background-color: #000; /* Base black color */
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 25%, rgba(0, 0, 0, 0.8) 75%), 
+                      linear-gradient(225deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0.8) 75%);
+    background-blend-mode: overlay;
+    background-size: cover;
+    position: relative;
+}
+
+/* Optional subtle shine effect */
+.shiny-black-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0));
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.shiny-black-bg::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6));
+    opacity: 0.5;
+    pointer-events: none;
+}
 
 
 
@@ -751,7 +862,7 @@
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
 
-    <body>
+    <body class="radial-gradient">
         <a href="javascript:" id="return-to-top" style="background-color: #301934;"><i class="fa fa-angle-up"></i></a>
         <!-- preloader Start -->
         <!-- <div id="preloader">
@@ -835,14 +946,15 @@
                 <script src="js/CanvasRenderer.js"></script>
             </canvas>
 
-            <div id="particles-js" style="background-color: #301934; padding-top: 0; max-height: 100vh;">
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"
-                    style="position: relative; height: 100vh;">
-                    <video autoplay muted loop
+            <div id="particles-js" style="background-color: #000; padding-top: 0; max-height: 100vh; position: relative;">
+                <div id="carousel-example-generic" class="carousel slide " data-ride="carousel"
+                    style="position: relative; height: 100vh;background-image: url('images/hero/hero2.jpeg');background-size: contain;background-repeat: ;">
+                    <!-- <video autoplay muted loop
                         style="width: 70%; height: auto; position: absolute; top: 50%; right: 0; transform: translateY(-50%); object-fit: cover; z-index: -1;">
                         <source src="gifs/WorldMap5.mp4" type="video/mp4">
                         Your browser does not support the video tag.
-                    </video>
+                    </video> -->
+                    <!-- <img src="images/bg/mhs-2.jpg" alt=""> -->
                     <div class="carousel-inne" role="listbox">
                         <div class="item active">
                             <div class="">
@@ -853,16 +965,8 @@
                                                 style="margin-top: -20vh !important; z-index: 100;">
                                                 <h2 data-animation="animated bounceInLeft">The Biggest Trade Network in Africa<br>
                                                     </h2>
-                                                <p style="color: #fff;" data-animation="animated bounceInRight">
-                                                    MHS is revolutionizing the digital financial landscape by providing
-                                                    a seamless, secure platform
-                                                    for transactions across Africa. Our mission is to make affordable
-                                                    and accessible digital financial
-                                                    services available to all, fostering economic growth and sustainable
-                                                    development. With innovative
-                                                    solutions at the core, MHS empowers individuals and businesses,
-                                                    driving prosperity throughout
-                                                    Africa's financial ecosystem.
+                                                <p style="color: #fff;font-size: larger;" data-animation="animated bounceInRight">
+                                                    MHS empowers Africa's trade finance with secure, tech-driven digital services for growth.
                                                 </p>
                                                 <div>
                                                     <a href="solutions.html" class="btn1"
@@ -887,7 +991,7 @@
             </div>
         </section>
 
-        <section>
+        <!-- <section>
             <div class="container-fluid top-intro-stats">
                 <div class="row stats-wrap stats-block animate text-center"
                     style="width: 80%;margin: auto;margin-top: -50px;">
@@ -929,23 +1033,24 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         </div>
         <!--About area start here-->
-        <div section-scroll='2' class="wd_scroll_wrap" style="background-color: #e1e1e1;">
-            <section class="features-area section" style="background-color: #e1e1e1;">
+        <div section-scroll='2' class="wd_scroll_wrap radial-gradient shiny-black-bg" style="background-color: #;">
+            <section class="features-area section shiny-black-bg" style="background-color:;">
                 <div id="features-js">
-                    <div class="container" style="background-color: #e1e1e1;">
+                    <div class="container" style="background-color: ;">
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="section-heading2 wow  fadeInUp animated" data-wow-duration="1.0s"
                                     style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">
-                                    <h2 class="why" style="font-weight: 800;letter-spacing: 2px;color: #150c1a;">Why
+                                    <h2 class="why text-glow" style="font-weight: 800;letter-spacing: 2px;color: #fff;">
+                                        Why
                                         Choose MHS for African <br> Trade Solutions?</h2>
                                 </div>
                             </div>
                         </div>
-                        <div class="row" style="background-color: #301934;">
+                        <div class="row" style="background-color: ;">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="featured-lists">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -1037,12 +1142,12 @@
             </section>
         </div>
 
-        <div class="wd_scroll_wrap">
-            <div class="container-fluid" style="background-color: #e1e1e1; padding: 40px;">
+        <div class="wd_scroll_wrap " >
+            <div class="container-fluid shiny-black-bg" style="background-color: ; padding: 40px;">
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <h1 class="wow fadeInUp animated"
-                            style="color: #150c1a; font-weight: 800; letter-spacing: 2px; padding-bottom: 20px;"
+                            style="color: #FFF; font-weight: 800; letter-spacing: 2px; padding-bottom: 20px;"
                             data-wow-duration="1.0s">
                             Who we serve
                         </h1>
@@ -1105,9 +1210,8 @@
 
                 </div>
 
-                <div class="who-we-serve-big-screens">
-                    <div class="row">
-                        <!-- Card 1 -->
+                <div class="who-we-serve-big-screens" style="background-image: url('images/hero/who-we-serve.jpeg');min-height: 120vh;">
+                    <!-- <div class="row">
                         <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                             <div class="card h-100"
                                 style="background-color: #301934; color: white; border: none; border-radius: 10px;">
@@ -1121,7 +1225,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Card 2 -->
                         <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                             <div class="card h-100"
                                 style="background-color: #301934; color: white; border: none; border-radius: 10px;">
@@ -1135,7 +1238,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Card 3 -->
                         <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                             <div class="card h-100"
                                 style="background-color: #301934; color: white; border: none; border-radius: 10px;">
@@ -1149,7 +1251,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Card 4 -->
                         <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                             <div class="card h-100"
                                 style="background-color: #301934; color: white; border: none; border-radius: 10px;">
@@ -1164,7 +1265,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Card 5 -->
                         <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                             <div class="card h-100"
                                 style="background-color: #301934; color: white; border: none; border-radius: 10px;">
@@ -1179,7 +1279,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Card 6 -->
                         <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                             <div class="card h-100"
                                 style="background-color: #301934; color: white; border: none; border-radius: 10px;">
@@ -1193,13 +1292,13 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
         </div>
 
-        <div section-scroll='4' class="wd_scroll_wrap">
+        <div section-scroll='4' class="wd_scroll_wrap shiny-black-bg">
 
             <section id="network" class="network-details ">
                 <div class="container-fluid section-with-b">

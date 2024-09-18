@@ -13,6 +13,7 @@
 
     <!-- Bootstrap CSS -->
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+\<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <!-- jQuery and Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -808,8 +809,16 @@
         });
 
         if (paginatedPosts.length === 0) {
-            blogContainer.innerHTML = `<p>No blog posts available at the moment. Please check back later.</p>`;
-        }
+    blogContainer.innerHTML = `
+        <div style="margin: auto;>
+                    <img src="https://images.unsplash.com/photo-1593642532976-1b7b8d3a13e2" alt="No Posts" style="width: 80px; height: 80px; object-fit: cover;" />
+            <div style="font-weight: 500; font-size: 1.2em; margin-top: 20px;">
+                <p>No blog posts and events available at the moment. Please check back later.</p>
+            </div>
+        </div>
+    `;
+}
+
 
         // Add click event listener for "Read More" arrows
         document.querySelectorAll('.read-more').forEach(arrow => {
